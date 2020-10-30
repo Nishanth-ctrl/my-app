@@ -3,17 +3,17 @@ pipeline {
     stages {
         stage('---clean---') {
             steps {
-                sh "/usr/local/src/apache-maven clean"
+                sh "mvn clean"
             }
         }
         stage('--test--') {
             steps {
-                sh "/usr/local/src/apache-maven test"
+                sh "mvn test"
             }
         }
         stage('--package--') {
             steps {
-                sh "/usr/local/src/apache-maven package"
+                sh "mvn package"
             }
         }
     }
